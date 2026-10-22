@@ -15,6 +15,11 @@ RPG(string name, int hits_taken, float luck, float exp, int level);
 //mutators 
 bool isAlive() const; 
 void setHitsTaken(int new_hits); 
+void setName(string name);
+void updateEXPLevel(); 
+void attack(RPG*opponent);
+void printStats();
+~RPG();
 
 //accessors
 string getName() const;
