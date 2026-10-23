@@ -36,11 +36,11 @@ int Game::selectPlayer(){
 }
 
 void Game::endRound(RPG* winner, RPG* loser, int loserindex){
+     printf ("%s won against %s\n", winner->getName().c_str(), loser->getName().c_str());
     winner->setHitsTaken(0); 
     live_players.erase(loserindex);
     winner->updateEXPLevel();
-    printf ("%s won against %i\n", winner->getName().c_str(), loser->getName().c_str());
-}
+   }
 
 void Game::battleRound(){
     int playInd1=selectPlayer();
@@ -73,3 +73,9 @@ void Game::gameLoop(){
             players[i]->printStats();
         }
     }
+Game::~Game()
+{
+    for (RPG* player : players) {
+        delete player;
+    }
+}
