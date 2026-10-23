@@ -56,7 +56,7 @@ void RPG::updateEXPLevel(){
     if(exp >= 100){
         level++;
         exp = 0;
-        luck += 0.01;
+        luck += 0.1;
     }
 }
 
@@ -75,7 +75,7 @@ void RPG::attack(RPG*opponent){
 }
 
 void RPG::printStats(){
-    printf("Name: %s\t Hits Taken: %i\t Luck: %f\t Exp: %f\t Level: %i\n Status: %s\n", name.c_str(), hits_taken, luck, exp, level, isAlive() ? "Alive" : "Dead");
+    printf("Name: %s\t Hits Taken: %i\t Luck: %f\t Exp: %f\t Level: %i\t Status: %s\n", name.c_str(), hits_taken, luck, exp, level, isAlive() ? "Alive" : "Dead");
 }
 
 RPG::~RPG()
