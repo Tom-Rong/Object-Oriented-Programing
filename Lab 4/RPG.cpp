@@ -1,5 +1,6 @@
 #include "RPG.h"
 #include <string> 
+#include <random>
 using namespace std;
 RPG::RPG(){
 name = "NPC";
@@ -69,11 +70,14 @@ void RPG::attack(RPG*opponent){
     bool hit; 
     if (random_num > HIT_FACTOR * opponent->getLuck()){
         hit = true; 
-        updateHitsTaken(opponent);
+        opponent->setHitsTaken(opponent->getHitsTaken() + 1);
     }
 }
 
 void RPG::printStats(){
-printf("Name:" ge)
+    printf("Name: %s\t Hits Taken: %i\t Luck: %f\t Exp: %f\t Level: %i\n Status: %s\n", name.c_str(), hits_taken, luck, exp, level, isAlive() ? "Alive" : "Dead");
+}
 
+RPG::~RPG()
+{
 }
