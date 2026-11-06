@@ -22,7 +22,7 @@ Pokemon::Pokemon(string name, int hp, int att, int defense, vector<string> type)
 }
 
 void Pokemon::speak(){
-    cout << "Charmander" << endl; 
+    cout << "...." << endl; 
 }
 
 void Pokemon::printStats(){
@@ -31,5 +31,6 @@ void Pokemon::printStats(){
     for(int i = 0; i < type.size(); i++){
         cout<<type[i]<< "\t";
     }
-    cout<<endl;
+
+    cout << endl;
 }
